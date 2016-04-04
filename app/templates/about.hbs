@@ -1,0 +1,13 @@
+<h3>About</h3>
+
+{{#each model as |person|}}
+		{{#link-to 'about.person' person}}
+		<p>ID: {{person.id}} Name: {{person.name}}</p>
+		{{/link-to}}
+{{/each}}
+
+{{outlet}}
+
+<p>{{#link-to 'index'}}Home{{/link-to}}</p>
+<p>{{#link-to 'orders'}}Orders{{/link-to}}</p>
+<p>{{#link-to 'about'}}About{{/link-to}}</p>
