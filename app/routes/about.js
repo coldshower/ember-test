@@ -1,10 +1,10 @@
 import Ember from 'ember';
 
 export default Ember.Route.extend({
-	model(params) {
-		return [
-			{ id: '1', name: 'Nate' },
-			{	id: '2', name: 'John'	}
-		];
-	}
+	model() {
+		const team = this.get('team');
+		return team.getPersons();		
+	},
+
+	team: Ember.inject.service()
 });

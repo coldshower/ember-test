@@ -2,9 +2,10 @@ import Ember from 'ember';
 
 export default Ember.Route.extend({
 	model(params) {
-		return [
-			{ id: '1', name: 'Nate' },
-			{	id: '2', name: 'John'	}
-		].findBy('id', params.person_id);
-	}
+		const id = params.person_id;
+		const team = this.get('team');
+		return team.getPersonById(id);
+	},
+		
+	team: Ember.inject.service()
 });
